@@ -10,4 +10,4 @@ rectangle and circle zones:
 
 
 
-support and dev: https://discord.gg/ktzjBM2MkZ
+support and dev discord: https://discord.gg/ktzjBM2MkZ
