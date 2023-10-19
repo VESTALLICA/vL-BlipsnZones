@@ -1,4 +1,4 @@
-# mc-blipcreator
+# vL-blipcreator
 
 free and easy FiveM Blip Creator.
 
@@ -6,7 +6,8 @@ the resource also features a rectangle and circle zone creator.
 
 rectangle and circle zones:
 
-![image](https://github.com/VESTALLICA/mc-blipcreator/assets/147888622/e18da052-99a6-4ae2-b07d-ca044a0a1e05)
+![image](https://github.com/VESTALLICA/vL-blipcreator/assets/147888622/6d55ad82-e809-4128-923d-a3a6153e8290)
 
 
-mudcrab discord: https://discord.gg/ktzjBM2MkZ
+
+support and dev: https://discord.gg/ktzjBM2MkZ
