@@ -2,10 +2,10 @@ fx_version 'cerulean'
 game 'gta5'
 
 
-author 'MUDCRAB'
+author 'VESTA'
 description 'Advanced Blip Creator'
 discord 'https://discord.gg/ktzjBM2MkZ'
-scriptname 'mc-blipsandzones'
+scriptname 'vL-blipcreator'
 
 
 shared_script 'config.lua'
