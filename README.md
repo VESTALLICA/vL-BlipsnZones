@@ -1,4 +1,4 @@
-# blipcreator
+# mc-blipcreator
 
 free and easy FiveM Blip Creator.
 
