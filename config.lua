@@ -6,34 +6,34 @@ Config.ShowBlips = true
 
 Config.Blips = {
     [1] = {
-        show = true,
+        Show = true,
 
-        vector = vector3(-494.69, 5.88, 45.05), -- blip location
-        text = "Example", 
+        Vector = vector3(-494.69, 5.88, 45.05), -- blip location
+        Text = "Example", 
 
-        color = 1, -- https://docs.fivem.net/docs/game-references/blips/ sprites + colors 
-        alpha = 255, -- transparency of blip. min-max = 0-255 
+        Color = 1, -- https://docs.fivem.net/docs/game-references/blips/ sprites + colors 
+        Alpha = 255, -- transparency of blip. min-max = 0-255 
         
-        sprite = 727, 
-        scale = 1.0, 
+        Sprite = 727, 
+        Scale = 1.0, 
 
-        flash = false,
-        ms = 0, -- flashes the blip every x milliseconds 
+        Flash = false,
+        MS = 0, -- flashes the blip every x milliseconds 
     },
     [2] = {
-        show = false,
+        Show = false,
 
-        vector = vector3(0, 0, 0), 
-        text = "text", 
+        Vector = vector3(0, 0, 0), 
+        Text = "text", 
 
-        color = 0, 
-        alpha = 0, 
+        Color = 0, 
+        Alpha = 0, 
         
-        sprite = 0, 
-        scale = 0.0, 
+        Sprite = 0, 
+        Scale = 0.0, 
 
-        flash = false,
-        ms = 0,
+        Flash = false,
+        MS = 0,
     },
 }
 
@@ -41,34 +41,68 @@ Config.Blips = {
 
 Config.ShowRectangleZones = true
 
+--[[
+if points = false and polyzone = true then a box zone will be created with the same dimensions as the rectangle  blip. you can instead define custom points to build a custom shape instead.  
+please note that, if you are making a custom shape, the blip will still be rectangular. custom blips are not possible as the only native blip functions are
+for an entity, coord, circle radius, or rectangle area. 
+
+to define a custom poly shape, make a table of vector2 coords: 
+Points = {
+    vector2(0, 0),
+    vector2(0, 0),
+    vector2(0, 0),
+    vector2(0, 0),
+},   
+]]
 Config.RectangleZones = {
-    [1] = {
-        show = true,
+    ['Example1'] = { -- name of the zone. this will also be the name of the polyzone if enabled
+        Show = true,
 
-        vector = vector3(-880.72, -118.52, 37.97), -- blip location
-        width = 250.0, -- must end with a decimal value
-        height = 100.0, -- ^^
+        Vector = vector3(-880.72, -118.52, 37.97), -- blip location
+        Width = 250.0, -- must end with a decimal value
+        Length = 100.0, -- ^^
         
-        rotation = 27, -- rotation of the rectangle
-        color = 1,
-        alpha = 155,
+        Rotation = 27, -- rotation of the rectangle
+        Color = 1,
+        Alpha = 155,
 
-        flash = false,
-        ms = 0, -- flashes the blip every x milliseconds 
+        Flash = false,
+        MS = 0, -- flashes the blip every x milliseconds 
+
+        -- polyzones. must have ps-zones
+        PolyZone = true, -- set to true to create a polyzone for this blip.
+        DebugPoly = true, -- draws the poly
+        MinZ = 37.97 - 10, -- make sure to set 
+        MaxZ = 37.37 + 10, -- ^^
+        Points = false, -- see the note
+        
+        -- trigger an event that contains whatever codeblocks you want to run. leave false to disable the event trigger.
+        PlayerIn = { event = 'example:1' }, -- the events that triggers when a player enters this zone.
+        PlayerOut = { event = 'example:2' },  -- the events that triggers when a player leaves this zone.
+
     },
-    [2] = {
-        show = false,
+    ['Example2'] = {
+        Show = false,
 
-        vector = vector3(0, 0, 0), 
-        width = 0.0, 
-        height = 0.0, 
+        Vector = vector3(0, 0, 0), 
+        Width = 0.0, 
+        Length = 0.0, 
         
-        rotation = 0, 
-        color = 0,
-        alpha = 0,
+        Rotation = 0, 
+        Color = 0,
+        Alpha = 0,
 
-        flash = false,
-        ms = 0, 
+        Flash = false,
+        MS = 0, 
+
+        PolyZone = false,
+        DebugPoly = false,
+        MinZ = 0, 
+        MaxZ = 0,
+        Points = false,
+
+        PlayerIn = { event = 'example:1' }, 
+        PlayerOut = { event = 'example:2' },  
     },
 }
 
@@ -77,32 +111,47 @@ Config.RectangleZones = {
 Config.ShowCircleZones = true
 
 Config.CircleZones = {
-    [1] = {
-        show = true,
+    ['Example3'] = {
+        Show = true,
         
-        vector = vector3(-256.46, -49.26, 49.54), -- blip location
-        radius = 100.0, -- must end in decimal value
-        outline = false, -- will make the radius an outline 
-        color = 1,
-        alpha = 155,
+        Vector = vector3(-627.01, -6.51, 41.7), -- blip location
+        Radius = 100.0, -- must end in decimal value
+        Outline = false, -- will make the radius an outline 
+        Color = 1,
+        Alpha = 155,
 
-        flash = false, 
-        ms = 0, -- flashes the blip every x milliseconds 
+        Flash = false, 
+        MS = 0, -- flashes the blip every x milliseconds 
+
+        -- must have ps-zones
+        PolyZone = true,
+        DebugPoly = true, -- draws the poly
+        MinZ = 49.54 - 10, -- make sure to set 
+        MaxZ = 49.54 + 10, -- ^^
+        Points = false, -- if false and polyzone is true then it will default to a circle zone with the same dimensions. 
+
+        PlayerIn = { event = 'example:3' }, 
+        PlayerOut = { event = 'example:4' },  
     },
-    [2] = {
-        show = false,
+    ['Example4'] = {
+        Show = false,
         
-        vector = vector3(0, 0, 0), 
-        radius = 0.0,
-        outline = false, 
-        color = 0,
-        alpha = 0,
+        Vector = vector3(0, 0, 0), 
+        Radius = 0.0,
+        Outline = false, 
+        Color = 0,
+        Alpha = 0,
 
-        flash = false,
-        ms = 0, 
+        Flash = false,
+        MS = 0, 
+
+        PolyZone = false,
+        DebugPoly = false, 
+        MinZ = 0, 
+        MaxZ = 0,
+        Points = false,
+
+        PlayerIn = { event = 'example:3' }, 
+        PlayerOut = { event = 'example:4' },  
     },
 }
-
-
-
-
