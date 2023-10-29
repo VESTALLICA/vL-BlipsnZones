@@ -14,4 +14,4 @@ the script will trigger your event with the playerpedid and zone name as paramet
 
 watching the video will explain everything way more clearly: https://streamable.com/r5ridv
 
-support and dev discord: https://discord.gg/ktzjBM2MkZ
+more resources and support in the vL discord: https://discord.gg/GC6tWQAK8u
