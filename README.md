@@ -1,5 +1,9 @@
 # vL-BlipsnZones
 
+must have ps-zones for this resource to work.
+
+https://github.com/Project-Sloth/ps-zones
+
 free and easy FiveM Blip Creator and Zone Creator.
 
 You can create any type of blip, along with Rectangle and Circle area zones on the map:
